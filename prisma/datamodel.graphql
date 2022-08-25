@@ -1,0 +1,24 @@
+type User {
+  id: ID! @unique
+  name: String!
+  email: String! @unique
+  age: Int!
+  post: [Post!]!
+  comment: [Comment!]!
+}
+
+type Post {
+    id: ID! @unique
+    title: String!
+    body: String!
+    publishe: Boolean!
+    auther: User!
+    comment: [Comment!]!
+}
+
+type Comment { 
+    id: ID! @unique
+    text: String!
+    post: Post!
+    auther: User!
+}
